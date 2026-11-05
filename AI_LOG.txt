@@ -1,0 +1,3 @@
+AI assistance log - Tuman
+
+2026-11-05 | Codex chat | Game ideation and GDD preparation | Adapted the proposed game from Auyl Match to an original village-themed top-down shooter with Jeztyrnak, Werewolf and Ghost Archer; drafted the ten required sections, MVP, cut list and week 9-13 plan. Used An Ant's Life only as a visual structure reference; its game content was not copied. | Documentation assistance only; no Tuman gameplay code written in this task. Student review and personal edits remain to be recorded honestly.
