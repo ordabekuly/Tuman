@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dc4511d00e528e47bd0816086094403, type: 3}
+  m_Name: Level_01
+  m_EditorClassIdentifier: Assembly-CSharp::TumanGame.LevelData
+  levelNumber: 1
+  title: The home courtyard
+  description: Find your footing. Reclaim your home.
+  goal: Clear the werewolves
+  timeLimit: 90
+  playerSpawn: {x: -6, y: -3}
+  enemySpawns:
+  - {x: 3, y: -3}
+  - {x: 6, y: 4}
+  herbSpawns:
+  - {x: -3, y: -4}
+  tokenSpawns:
+  - {x: -3, y: -2}
+  - {x: 5, y: -5}
+  enemyStats: {fileID: 11400000, guid: f9f7d37fbcf8907498408b2adee09b48, type: 2}
+  atmosphere: {r: 0.85, g: 0.91, b: 1, a: 1}
