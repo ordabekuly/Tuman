@@ -1,0 +1,15 @@
+{
+    "format": "TUMAN",
+    "version": 1,
+    "completedLevels": 3,
+    "bestScore": 650,
+    "lastLevel": 3,
+    "unlockedLevels": [
+        1,
+        2,
+        3
+    ],
+    "musicVolume": 0.3100000023841858,
+    "effectsVolume": 0.4699999988079071,
+    "vibration": true
+}
