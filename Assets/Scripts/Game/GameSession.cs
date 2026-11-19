@@ -28,6 +28,7 @@ namespace TumanGame
         void Awake()
         {
             Instance=this;Time.timeScale=1;
+            if(!FindAnyObjectByType<AudioListener>())gameObject.AddComponent<AudioListener>();
             Save=new SaveService(SavePath);
             Sound=gameObject.AddComponent<GameAudio>();Sound.Apply(Save.Data);
             UI=gameObject.AddComponent<GameUI>();UI.Build(this);
@@ -54,6 +55,7 @@ namespace TumanGame
             CurrentLevel=levels[index];Score=0;Defeated=0;Remaining=CurrentLevel.timeLimit;
             Save.Data.lastLevel=CurrentLevel.levelNumber;Save.Save();
             player.gameObject.SetActive(true);player.Restore();
+            player.transform.position=CurrentLevel.playerSpawn;
             player.GetComponent<Rigidbody2D>().position=CurrentLevel.playerSpawn;
             Physics2D.SyncTransforms();
             var light=FindAnyObjectByType<Light2D>();if(light)light.color=CurrentLevel.atmosphere;

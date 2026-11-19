@@ -86,7 +86,7 @@ namespace TumanGame
             {
                 int n=i;var level=game.levels[i];bool unlocked=game.Save.IsUnlocked(level.levelNumber);
                 var card=Panel("Level "+level.levelNumber,content,new Vector2(-430+i*430,-15),new Vector2(400,390),ink);
-                Label("Number",card.transform,"0"+level.levelNumber,new Vector2(0,120),new Vector2(340,70),66,unlocked?gold:Color.gray);
+                Label("Number",card.transform,"0"+level.levelNumber,new Vector2(0,120),new Vector2(340,100),58,unlocked?gold:Color.gray);
                 Label("Title",card.transform,level.title,new Vector2(0,40),new Vector2(340,65),31);
                 Label("Details",card.transform,$"{level.EnemyCount} WEREWOLVES  /  {level.timeLimit:0}s\n{level.description}",new Vector2(0,-45),new Vector2(340,100),22,new Color(.7f,.77f,.74f));
                 var b=Button("Play",card.transform,unlocked?"ENTER  >":"LOCKED",new Vector2(0,-145),new Vector2(340,65),()=>game.StartLevel(n),unlocked);
