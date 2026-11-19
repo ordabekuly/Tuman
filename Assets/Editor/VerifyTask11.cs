@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -12,6 +13,7 @@ public static class VerifyTask11
     static readonly List<string> results=new List<string>();
     static GameSession game;static EnemyHealth target;static int phase;static float due;static string realPath;
     static bool success=true;static float originalSpeed;
+    static EnemyHealth ghost;static int hpBefore;static float ghostStartX;
     static VerifyTask11(){EditorApplication.playModeStateChanged+=State;}
     static void Check(string label,bool pass)
     {
@@ -75,6 +77,16 @@ public static class VerifyTask11
                     Check("settings_ui_saves",Mathf.Approximately(new SaveService(GameSession.SavePath).Data.musicVolume,.31f));
                     game.StartLevel(0);due=Time.realtimeSinceStartup+.4f;break;
                 case 1:
+                    if(game.joystickBase) {
+                        Canvas.ForceUpdateCanvases();
+                        var pad=game.UI.Joystick.GetComponent<UnityEngine.UI.Image>();
+                        var fire=UnityEngine.Object.FindAnyObjectByType<HoldFire>().GetComponent<UnityEngine.UI.Image>();
+                        Vector2 center=RectTransformUtility.WorldToScreenPoint(null,fire.rectTransform.position);
+                        Vector2 corner=RectTransformUtility.WorldToScreenPoint(null,fire.rectTransform.TransformPoint(new Vector3(-fire.rectTransform.rect.width*.49f,fire.rectTransform.rect.height*.49f)));
+                        Check("gold_joystick_skin",pad.sprite==game.joystickBase&&game.joystickKnob);
+                        Check("fire_icon_center_accepts_touch",fire.sprite==game.fireIcon&&fire.IsRaycastLocationValid(center,null));
+                        Check("transparent_fire_corner_ignores_touch",!fire.IsRaycastLocationValid(corner,null));
+                    }
                     Check("level_one_spawn_count",UnityEngine.Object.FindObjectsByType<EnemyHealth>().Length==2);
                     foreach(var e in UnityEngine.Object.FindObjectsByType<EnemyHealth>())e.GetComponent<EnemyAI>().enabled=false;
                     target=UnityEngine.Object.FindObjectsByType<EnemyHealth>()[0];
@@ -122,15 +134,64 @@ public static class VerifyTask11
                 case 10:
                     Check("all_progress_persists",new SaveService(GameSession.SavePath).Data.completedLevels==3);
                     File.Copy(GameSession.SavePath,"Submission_Backup/save.example.json",true);
-                    game.ResetProgress();Check("reset_returns_home_and_locks",game.UI.CurrentScreen=="Home"&&!game.Save.IsUnlocked(2));
-                    File.WriteAllLines("Submission_Backup/task11-play-checks.txt",results);
-                    Debug.Log("TASK11_PLAY_CHECKS_"+(success?"PASS":"FAILED")+"\n"+string.Join("\n",results));
-                    EditorApplication.update-=Tick;EditorApplication.isPlaying=false;break;
+                    if(game.ghostTemplate) {
+                        game.StartLevel(1);
+                        ghost=UnityEngine.Object.FindObjectsByType<EnemyHealth>().First(e=>e.IsAlive&&e.stats.rangedAttack);
+                        foreach(var e in UnityEngine.Object.FindObjectsByType<EnemyHealth>())if(e!=ghost){e.GetComponent<EnemyAI>().enabled=false;Place(e.gameObject,new Vector2(-13,6));}
+                        Place(ghost.gameObject,new Vector2(8,-4));Place(game.player.gameObject,new Vector2(12,-4));
+                        hpBefore=game.player.CurrentHealth;due=Time.realtimeSinceStartup+.3f;break;
+                    }
+                    Finish();break;
+                case 11:
+                    Check("ghost_attack_windup",ghost.GetComponent<EnemyAI>().CurrentState==EnemyAI.State.Attack&&game.player.CurrentHealth==hpBefore);
+                    due=Time.realtimeSinceStartup+1.6f;break;
+                case 12:
+                    Check("ghost_projectile_deals_damage",game.player.CurrentHealth==hpBefore-1);
+                    Place(ghost.gameObject,new Vector2(8,-4));Place(game.player.gameObject,new Vector2(9.7f,-4));ghostStartX=ghost.transform.position.x;
+                    due=Time.realtimeSinceStartup+.2f;break;
+                case 13:
+                    Check("ghost_retreats_when_close",ghost.transform.position.x<ghostStartX);
+                    ghost.GetComponent<EnemyAI>().enabled=false;
+                    Place(ghost.gameObject,new Vector2(-2,2));Place(game.player.gameObject,new Vector2(2,2));hpBefore=game.player.CurrentHealth;
+                    EnemyBolt.Create(ghost.GetComponent<Collider2D>().bounds.center,game.player.GetComponent<Collider2D>().bounds.center,ghost.gameObject,ghost.stats);
+                    due=Time.realtimeSinceStartup+1.2f;break;
+                case 14:
+                    Check("wall_blocks_ghost_sight_and_bolt",!ghost.GetComponent<EnemyAI>().CanSeePlayer()&&game.player.CurrentHealth==hpBefore);
+                    Place(ghost.gameObject,new Vector2(8,-4));Place(game.player.gameObject,new Vector2(12,-4));
+                    EnemyBolt.Create(ghost.GetComponent<Collider2D>().bounds.center,game.player.GetComponent<Collider2D>().bounds.center,ghost.gameObject,ghost.stats);
+                    Place(game.player.gameObject,new Vector2(12,-2));hpBefore=game.player.CurrentHealth;
+                    due=Time.realtimeSinceStartup+1.2f;break;
+                case 15:
+                    Check("ghost_bolt_can_be_dodged",game.player.CurrentHealth==hpBefore);
+                    Place(game.player.gameObject,new Vector2(12,-4));game.player.GetComponent<PlayerShooting>().Fire();
+                    due=Time.realtimeSinceStartup+.45f;break;
+                case 16:
+                    Check("ghost_first_hit",ghost.CurrentHealth==2);game.player.GetComponent<PlayerShooting>().Fire();due=Time.realtimeSinceStartup+.45f;break;
+                case 17:
+                    Check("ghost_second_hit",ghost.CurrentHealth==1);game.player.GetComponent<PlayerShooting>().Fire();due=Time.realtimeSinceStartup+.45f;break;
+                case 18:
+                    Check("ghost_dies_after_three_hits",!ghost||!ghost.IsAlive);
+                    var follow=Camera.main.GetComponent<FollowCamera>();follow.Snap();
+                    Check("follow_camera_right_courtyard",Camera.main.transform.position.x>0&&Camera.main.orthographicSize<8);
+                    var ground=UnityEngine.Object.FindObjectsByType<UnityEngine.Tilemaps.Tilemap>().First(m=>m.name=="Ground");
+                    Check("expanded_map_32_by_18",ground.GetUsedTilesCount()>0&&ground.HasTile(new Vector3Int(14,7,0))&&ground.HasTile(new Vector3Int(-15,-8,0)));
+                    Check("mixed_enemy_composition",game.levels[0].GhostCount==0&&game.levels[1].GhostCount==1&&game.levels[2].GhostCount==2);
+                    Finish();break;
             }
         } catch(Exception error) {
             success=false;Debug.LogException(error);File.WriteAllText("Submission_Backup/task11-play-checks.txt",string.Join("\n",results)+"\n"+error);
             if(game&&game.player)game.player.GetComponent<PlayerSpriteAnimation>().stats.moveSpeed=originalSpeed;
             EditorApplication.update-=Tick;EditorApplication.isPlaying=false;
         }
+    }
+    static void Place(GameObject obj,Vector2 position)
+    {obj.transform.position=position;var body=obj.GetComponent<Rigidbody2D>();body.position=position;body.linearVelocity=Vector2.zero;Physics2D.SyncTransforms();}
+    static void Finish()
+    {
+        game.ResetProgress();Check("reset_returns_home_and_locks",game.UI.CurrentScreen=="Home"&&!game.Save.IsUnlocked(2));
+        File.WriteAllLines("Submission_Backup/task11-play-checks.txt",results);
+        if(game.ghostTemplate)File.WriteAllLines("Submission_Backup/ghost-expansion-checks.txt",results);
+        Debug.Log("TASK11_PLAY_CHECKS_"+(success?"PASS":"FAILED")+"\n"+string.Join("\n",results));
+        EditorApplication.update-=Tick;EditorApplication.isPlaying=false;
     }
 }

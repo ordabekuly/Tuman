@@ -10,9 +10,11 @@ namespace TumanGame
         public LevelData[] levels;
         public ItemValues items;
         public GameObject enemyTemplate;
+        public GameObject ghostTemplate;
         public PlayerHealth player;
         public Font font;
         public Sprite menuBackground;
+        public Sprite joystickBase,joystickKnob,fireIcon;
         public bool IsPlaying { get; private set; }
         public bool Paused { get; private set; }
         public LevelData CurrentLevel { get; private set; }
@@ -46,6 +48,7 @@ namespace TumanGame
             foreach(var obj in spawned)if(obj)Destroy(obj);
             spawned.Clear();defeatedIds.Clear();
             foreach(var shot in FindObjectsByType<LightProjectile>())Destroy(shot.gameObject);
+            foreach(var shot in FindObjectsByType<EnemyBolt>())Destroy(shot.gameObject);
             var body=player.GetComponent<Rigidbody2D>();body.linearVelocity=Vector2.zero;
         }
         public void StartLevel(int index)
@@ -59,19 +62,27 @@ namespace TumanGame
             player.GetComponent<Rigidbody2D>().position=CurrentLevel.playerSpawn;
             Physics2D.SyncTransforms();
             var light=FindAnyObjectByType<Light2D>();if(light)light.color=CurrentLevel.atmosphere;
-            for(int i=0;i<CurrentLevel.EnemyCount;i++)
+            SpawnEnemies(enemyTemplate,CurrentLevel.enemySpawns,CurrentLevel.enemyStats,"Werewolf");
+            SpawnEnemies(ghostTemplate,CurrentLevel.ghostSpawns,CurrentLevel.ghostStats,"Ghost");
+            SpawnItems(CurrentLevel.herbSpawns,true);SpawnItems(CurrentLevel.tokenSpawns,false);
+            IsPlaying=true;UI.ShowHUD();
+            var follow=Camera.main?Camera.main.GetComponent<FollowCamera>():null;if(follow)follow.Snap();
+        }
+        void SpawnEnemies(GameObject template,Vector2[] positions,EnemyStats values,string kind)
+        {
+            if(positions==null||positions.Length==0)return;
+            if(!template||!values)throw new System.InvalidOperationException("Missing "+kind+" template or stats.");
+            for(int i=0;i<positions.Length;i++)
             {
-                Vector2 position=CurrentLevel.enemySpawns[i];
-                var enemy=Instantiate(enemyTemplate,position,Quaternion.identity);enemy.name="Werewolf "+(i+1);
+                Vector2 position=positions[i];
+                var enemy=Instantiate(template,position,Quaternion.identity);enemy.name=kind+" "+(i+1);
                 var a=new GameObject("Patrol A");a.transform.position=position+Vector2.left;
                 var b=new GameObject("Patrol B");b.transform.position=position+Vector2.right;
                 spawned.Add(a);spawned.Add(b);spawned.Add(enemy);
-                enemy.GetComponent<EnemyAI>().Configure(player.transform,new[]{a.transform,b.transform},CurrentLevel.enemyStats);
-                var health=enemy.GetComponent<EnemyHealth>();health.stats=CurrentLevel.enemyStats;health.CountsForProgress=true;
+                enemy.GetComponent<EnemyAI>().Configure(player.transform,new[]{a.transform,b.transform},values);
+                var health=enemy.GetComponent<EnemyHealth>();health.stats=values;health.CountsForProgress=true;
                 enemy.SetActive(true);
             }
-            SpawnItems(CurrentLevel.herbSpawns,true);SpawnItems(CurrentLevel.tokenSpawns,false);
-            IsPlaying=true;UI.ShowHUD();
         }
         void SpawnItems(Vector2[] points,bool healing)
         {

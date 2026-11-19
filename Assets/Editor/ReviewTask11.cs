@@ -40,6 +40,15 @@ public static class ReviewTask11
         var game=GameSession.Instance;
         switch(command) {
             case "capture":CaptureScreens(game);break;
+            case "ghostpreview":
+                string before=JsonUtility.ToJson(game.Save.Data,true);
+                try {
+                    game.Save.Complete(1,0);game.StartLevel(1);
+                    game.player.transform.position=new Vector2(6,0);game.player.GetComponent<Rigidbody2D>().position=new Vector2(6,0);Physics2D.SyncTransforms();
+                    Directory.CreateDirectory("Submission_Expanded");
+                    Render(game,"Submission_Expanded/Expanded_Ghost_Controls.png",1600,900);
+                } finally {File.WriteAllText(GameSession.SavePath,before);game.Save.Load();game.ShowHome();}
+                break;
             case "home":game.ShowHome();break;
             case "levels":game.UI.ShowLevels();break;
             case "settings":game.UI.ShowSettings();break;
@@ -73,6 +82,7 @@ public static class ReviewTask11
         var previousTarget=camera.targetTexture;var previousMode=canvas.renderMode;float aspect=camera.aspect;
         var target=new RenderTexture(width,height,24,RenderTextureFormat.ARGB32);target.Create();
         camera.targetTexture=target;camera.aspect=width/(float)height;
+        var follow=camera.GetComponent<FollowCamera>();if(follow)follow.Snap();
         canvas.renderMode=RenderMode.ScreenSpaceCamera;canvas.worldCamera=camera;canvas.planeDistance=1;
         Canvas.ForceUpdateCanvases();
         var request=new UnityEngine.Rendering.Universal.UniversalRenderPipeline.SingleCameraRequest{destination=target};

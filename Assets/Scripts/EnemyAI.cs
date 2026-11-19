@@ -90,7 +90,9 @@ public sealed class EnemyAI : MonoBehaviour
             Vector2.Distance(body.position, player.position) <= attackRange)
         {
             currentState = State.Attack;
-            body.linearVelocity = Vector2.zero;
+            bool ranged=stats&&stats.rangedAttack;
+            body.linearVelocity = ranged&&Vector2.Distance(body.position,player.position)<stats.retreatDistance
+                ? (body.position-(Vector2)player.position).normalized*chaseSpeed : Vector2.zero;
             if (!windingUp && Time.time >= nextAttackAt)
             {
                 windingUp = true;
@@ -101,7 +103,10 @@ public sealed class EnemyAI : MonoBehaviour
             {
                 // Recheck sight and range at the hit, so the player can dodge.
                 if (CanSeePlayer() && Vector2.Distance(body.position, player.position) <= attackRange)
-                    playerHealth.TakeDamage(damage);
+                {
+                    if(ranged)TumanGame.EnemyBolt.Create(ownCollider.bounds.center,playerCollider.bounds.center,gameObject,stats);
+                    else playerHealth.TakeDamage(damage);
+                }
                 CancelWindup();
                 nextAttackAt = Time.time + attackCooldown;
             }

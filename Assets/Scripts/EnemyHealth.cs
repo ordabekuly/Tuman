@@ -22,6 +22,8 @@ public sealed class EnemyHealth : MonoBehaviour
         if (body) body.linearVelocity = Vector2.zero;
         foreach (var collider in GetComponentsInChildren<Collider2D>()) collider.enabled = false;
         if(CountsForProgress && TumanGame.GameSession.Instance) TumanGame.GameSession.Instance.EnemyDefeated(this);
+        var ghost=GetComponent<TumanGame.GhostMotion>();
+        if(ghost){ghost.Die();return;}
         var anim = GetComponent<TumanGame.EnemyMotion>();
         if(anim) { anim.Die(); return; }
         gameObject.SetActive(false);

@@ -88,7 +88,7 @@ namespace TumanGame
                 var card=Panel("Level "+level.levelNumber,content,new Vector2(-430+i*430,-15),new Vector2(400,390),ink);
                 Label("Number",card.transform,"0"+level.levelNumber,new Vector2(0,120),new Vector2(340,100),58,unlocked?gold:Color.gray);
                 Label("Title",card.transform,level.title,new Vector2(0,40),new Vector2(340,65),31);
-                Label("Details",card.transform,$"{level.EnemyCount} WEREWOLVES  /  {level.timeLimit:0}s\n{level.description}",new Vector2(0,-45),new Vector2(340,100),22,new Color(.7f,.77f,.74f));
+                Label("Details",card.transform,$"{level.WerewolfCount} WOLVES  /  {level.GhostCount} GHOSTS\n{level.timeLimit:0}s  /  {level.description}",new Vector2(0,-45),new Vector2(340,110),20,new Color(.7f,.77f,.74f));
                 var b=Button("Play",card.transform,unlocked?"ENTER  >":"LOCKED",new Vector2(0,-145),new Vector2(340,65),()=>game.StartLevel(n),unlocked);
                 b.interactable=unlocked;
             }
@@ -144,12 +144,20 @@ namespace TumanGame
             var pause=Button("Pause",hr,"II  PAUSE",Vector2.zero,new Vector2(240,75),game.Pause);
             var pr=(RectTransform)pause.transform;pr.anchorMin=pr.anchorMax=new Vector2(1,1);pr.anchoredPosition=new Vector2(-155,-65);
             var pad=Rect("Movement Joystick",hr,Vector2.zero,new Vector2(175,165),new Vector2(220,220));
-            pad.gameObject.AddComponent<Image>().color=new Color(.12f,.19f,.19f,.8f);
-            var knob=Rect("Knob",pad,new Vector2(.5f,.5f),Vector2.zero,new Vector2(80,80));knob.gameObject.AddComponent<Image>().color=gold;
+            var padImage=pad.gameObject.AddComponent<Image>();padImage.color=new Color(.12f,.19f,.19f,.8f);
+            if(game.joystickBase){padImage.sprite=game.joystickBase;padImage.preserveAspect=true;padImage.color=new Color(1,1,1,.82f);padImage.alphaHitTestMinimumThreshold=.1f;}
+            var knob=Rect("Knob",pad,new Vector2(.5f,.5f),Vector2.zero,new Vector2(90,90));knob.gameObject.AddComponent<Image>().color=gold;
+            if(game.joystickKnob){var image=knob.GetComponent<Image>();image.sprite=game.joystickKnob;image.preserveAspect=true;image.color=Color.white;}
             knob.GetComponent<Image>().raycastTarget=false;
             Joystick=pad.gameObject.AddComponent<MobileJoystick>();Joystick.SetKnob(knob);
             var fire=Button("Fire",hr,"FIRE",Vector2.zero,new Vector2(200,150),()=>{},true);
             var fr=(RectTransform)fire.transform;fr.anchorMin=fr.anchorMax=new Vector2(1,0);fr.anchoredPosition=new Vector2(-170,165);
+            if(game.fireIcon) {
+                fr.sizeDelta=new Vector2(270,270);fr.anchoredPosition=new Vector2(-170,175);
+                var image=fire.GetComponent<Image>();image.sprite=game.fireIcon;image.color=Color.white;image.preserveAspect=true;image.alphaHitTestMinimumThreshold=.1f;
+                var border=fire.GetComponent<Outline>();if(border)border.enabled=false;
+                fire.transform.Find("Label").gameObject.SetActive(false);
+            }
             fire.gameObject.AddComponent<HoldFire>().shooting=game.player.GetComponent<PlayerShooting>();
             game.player.GetComponent<PlayerMovement>().SetJoystick(Joystick);
             hud.SetActive(false);

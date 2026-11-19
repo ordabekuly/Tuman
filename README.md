@@ -1,6 +1,10 @@
 # Tuman
 A mobile 2D action shooter set in a haunted Kazakh village.
 
+### Local expansion (not uploaded yet)
+
+The working project now includes a ranged ghost, a 32×18 two-courtyard map and a bounded follow camera. Level composition is 2 wolves / 2 wolves + 1 ghost / 2 wolves + 2 ghosts. See [local expansion notes](Docs/Ghost_Expansion.md). This update remains uncommitted and unpushed at the user's request; the earlier Task 11 hand-in remains in Submission_Task11, and new local deliverables are in Submission_Expanded.
+
 ## Assignment 11 — Data and Saves
 
 Open the project with **Unity 6000.4.8f1**, then open **Assets/Scenes/Tuman11.unity** and press Play.
