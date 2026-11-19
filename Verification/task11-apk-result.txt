@@ -1,4 +1,4 @@
 result=Succeeded
 errors=0
-size=944114200
-duration=00:07:41.0988789
+size=944135621
+duration=00:02:11.0872234
