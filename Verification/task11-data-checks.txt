@@ -1,0 +1,8 @@
+missing_save_defaults=True
+json_roundtrip=True
+corrupt_defaults_2=True
+corrupt_defaults_3=True
+corrupt_defaults_4=True
+corrupt_defaults_5=True
+corrupt_defaults_6=True
+reset_persisted=True

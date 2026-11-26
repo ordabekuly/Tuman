@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c497182daf7076d4a93005dd32abf889, type: 3}
+  m_Name: TumanSound
+  m_EditorClassIdentifier: Assembly-CSharp::TumanGame.SoundLibrary
+  mixer: {fileID: 24100000, guid: c989b6735ebfbbb4e821a03c8635b1d3, type: 2}
+  tracks: {fileID: -6522772111463551762, guid: c989b6735ebfbbb4e821a03c8635b1d3, type: 2}
+  sfx: {fileID: 75827810599689961, guid: c989b6735ebfbbb4e821a03c8635b1d3, type: 2}
+  normal: {fileID: 24500006, guid: c989b6735ebfbbb4e821a03c8635b1d3, type: 2}
+  paused: {fileID: -1597859001159251420, guid: c989b6735ebfbbb4e821a03c8635b1d3, type: 2}
+  menuMusic: {fileID: 8300000, guid: b494da60edd2b3d449e145f499408422, type: 3}
+  levelMusic: {fileID: 8300000, guid: 562d5ef9192dd4740b92799be1349950, type: 3}
+  cues:
+  - kind: 0
+    clips:
+    - {fileID: 8300000, guid: fcce3b39529adde428b30f52455e81c3, type: 3}
+    - {fileID: 8300000, guid: f5072b551af1d4a45a59637d04025d6b, type: 3}
+    - {fileID: 8300000, guid: e6d1027bb46452649a9b5d4cf55f2741, type: 3}
+    gain: 0.35
+  - kind: 1
+    clips:
+    - {fileID: 8300000, guid: 815b88e6ddcfe7b48a01d419ea73e553, type: 3}
+    - {fileID: 8300000, guid: 2ac56e972a7f3e8498487da44851171e, type: 3}
+    gain: 0.45
+  - kind: 2
+    clips:
+    - {fileID: 8300000, guid: e1978eff56cc0a34897bda8ab75d123d, type: 3}
+    gain: 0.65
+  - kind: 3
+    clips:
+    - {fileID: 8300000, guid: 0cb530a03a84c3f46842f86402a9f334, type: 3}
+    - {fileID: 8300000, guid: c1e513746b44655438760d48591efd87, type: 3}
+    gain: 0.65
+  - kind: 4
+    clips:
+    - {fileID: 8300000, guid: 34ffdbce37975fb459e166a7cba392a9, type: 3}
+    - {fileID: 8300000, guid: 87ed5f78f3a74eb48ac7a3012873c26c, type: 3}
+    gain: 0.85
+  - kind: 5
+    clips:
+    - {fileID: 8300000, guid: ed010e6ba461f1b4087d022ae7862d4e, type: 3}
+    gain: 0.6
+  - kind: 6
+    clips:
+    - {fileID: 8300000, guid: c95fbfc2c6ab58c4892ac4a606277595, type: 3}
+    - {fileID: 8300000, guid: c5227e13f51d1bc42aeb66b9611c4dee, type: 3}
+    gain: 0.55
+  - kind: 7
+    clips:
+    - {fileID: 8300000, guid: a0418ccbc4b748d48bbb571bc05a36ae, type: 3}
+    gain: 0.7
+  - kind: 8
+    clips:
+    - {fileID: 8300000, guid: 281920825ba6aac44885b725219c328e, type: 3}
+    - {fileID: 8300000, guid: f7c80aae2af96934ba74cd43e86912ea, type: 3}
+    gain: 0.4
+  - kind: 9
+    clips:
+    - {fileID: 8300000, guid: 5e5012ec4fa3b284db604a054f3291f1, type: 3}
+    gain: 0.7
+  - kind: 10
+    clips:
+    - {fileID: 8300000, guid: 0f06d36d9aa96524a9c47b9a8bf5164d, type: 3}
+    gain: 0.65

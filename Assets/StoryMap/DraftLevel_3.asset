@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dc4511d00e528e47bd0816086094403, type: 3}
+  m_Name: DraftLevel_3
+  m_EditorClassIdentifier: Assembly-CSharp::TumanGame.LevelData
+  levelNumber: 3
+  title: Across the river
+  description: Village layout prototype. Clear enemies; story objectives are planned.
+  goal: Clear all creatures
+  timeLimit: 600
+  playerSpawn: {x: -25, y: 0}
+  enemySpawns:
+  - {x: 18, y: 9}
+  - {x: 26, y: 9}
+  ghostSpawns:
+  - {x: 19, y: 14}
+  - {x: 26, y: 14}
+  herbSpawns:
+  - {x: 22, y: 6}
+  tokenSpawns:
+  - {x: 23, y: 19}
+  enemyStats: {fileID: 11400000, guid: 0b3c15c1b91c48e44b1f5c67f6362d05, type: 2}
+  ghostStats: {fileID: 11400000, guid: 1b78073c4d7aba145a06ffeb15618e9d, type: 2}
+  atmosphere: {r: 0.69000006, g: 0.79, b: 1, a: 1}

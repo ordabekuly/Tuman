@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dc4511d00e528e47bd0816086094403, type: 3}
+  m_Name: Level_02
+  m_EditorClassIdentifier: Assembly-CSharp::TumanGame.LevelData
+  levelNumber: 2
+  title: Beyond the gate
+  description: Cross the gate. Dodge the ghost's light.
+  goal: Clear all creatures
+  timeLimit: 120
+  playerSpawn: {x: -10, y: -3}
+  enemySpawns:
+  - {x: -5, y: 3}
+  - {x: 9, y: -4}
+  ghostSpawns:
+  - {x: 10, y: 3}
+  herbSpawns:
+  - {x: -7, y: -5}
+  - {x: 5, y: -4}
+  tokenSpawns:
+  - {x: -7, y: -2}
+  - {x: 5, y: -2}
+  - {x: 12, y: -5}
+  enemyStats: {fileID: 11400000, guid: b1a61d2993a259047bdb348167e5cfaa, type: 2}
+  ghostStats: {fileID: 11400000, guid: 1b78073c4d7aba145a06ffeb15618e9d, type: 2}
+  atmosphere: {r: 0.77000004, g: 0.85, b: 1, a: 1}

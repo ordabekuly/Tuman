@@ -107,3 +107,11 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# Local builds, evidence bundles and working backups
+/Submission_Backup/
+/Submission_UI/
+/Submission_Task11/
+/Submission_Task12/
+/.vscode/
+/Assets/Resources/PerformanceTestRun*.json*
