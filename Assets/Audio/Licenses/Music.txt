@@ -1,0 +1,9 @@
+CC0 1.0 Universal: https://creativecommons.org/publicdomain/zero/1.0/
+Menu.ogg: Creepy Ambient Loop v2 by epb9000
+https://opengameart.org/content/creepy-ambient-loop
+https://opengameart.org/sites/default/files/creepyloop-v2_0.ogg
+Level.ogg: Spooky Loop by wipics
+https://opengameart.org/content/spooky-loop
+https://opengameart.org/sites/default/files/Spook_0.mp3
+Both source pages identify CC0; retrieved 2026-11-26.
+Level loop trimmed and converted as documented in README.

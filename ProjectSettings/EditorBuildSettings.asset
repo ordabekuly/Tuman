@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/TumanVillageDraft.unity
+    guid: 21db1105db21c894e8142210035022c2
+  - enabled: 0
     path: Assets/Scenes/Tuman11.unity
     guid: b88877ddb5e11dd4db21f2f6dcfe6eea
   m_configObjects:

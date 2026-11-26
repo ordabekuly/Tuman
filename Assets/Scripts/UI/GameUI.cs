@@ -46,7 +46,7 @@ namespace TumanGame
             var outline=image.gameObject.AddComponent<Outline>();outline.effectColor=new Color(gold.r,gold.g,gold.b,.65f);outline.effectDistance=new Vector2(1,-1);
             var b=image.gameObject.AddComponent<Button>();b.targetGraphic=image;
             var colors=b.colors;colors.highlightedColor=new Color(1.2f,1.2f,1.15f);colors.pressedColor=new Color(.7f,.75f,.75f);b.colors=colors;
-            b.navigation=new Navigation{mode=Navigation.Mode.None};b.onClick.AddListener(()=>action());
+            b.navigation=new Navigation{mode=Navigation.Mode.None};b.onClick.AddListener(()=>{game.Sound.Play(SoundEvent.Click);action();});
             Label("Label",image.transform,title,Vector2.zero,size-new Vector2(24,10),30,null,TextAnchor.MiddleCenter);return b;
         }
         void NewScreen(string title,bool backdrop=true)
@@ -113,7 +113,7 @@ namespace TumanGame
             NewScreen("Settings");
             Label("Heading",content,"MAKE IT YOURS",new Vector2(0,230),new Vector2(1280,70),48);
             Panel("Settings panel",content,new Vector2(-180,-20),new Vector2(900,390),ink);
-            MusicSlider=SliderControl("AMBIENCE",game.Save.Data.musicVolume,new Vector2(-180,70),game.SetMusic);
+            MusicSlider=SliderControl("MUSIC",game.Save.Data.musicVolume,new Vector2(-180,70),game.SetMusic);
             EffectsSlider=SliderControl("EFFECTS",game.Save.Data.effectsVolume,new Vector2(-180,-75),game.SetEffects);
             Label("Save note",content,"Settings are saved immediately and restored next launch.",new Vector2(-180,-170),new Vector2(760,60),20,new Color(.7f,.77f,.74f));
             Label("Reset explanation",content,"START FRESH\n\nClear scores and unlocks.\nThis cannot be undone.",new Vector2(450,25),new Vector2(330,200),27);
@@ -177,7 +177,7 @@ namespace TumanGame
             Label("Result title",content,won?"LIGHT RETURNS":"LOST IN THE MIST",new Vector2(0,150),new Vector2(1280,100),64,won?gold:cream,TextAnchor.MiddleCenter);
             Label("Reason",content,reason,new Vector2(0,55),new Vector2(1000,60),30,null,TextAnchor.MiddleCenter);
             Label("Score",content,$"SCORE  {game.Score:N0}    /    BEST  {game.Save.Data.bestScore:N0}",new Vector2(0,-20),new Vector2(1000,60),30,gold,TextAnchor.MiddleCenter);
-            Button("Primary",content,won&&game.CurrentLevel.levelNumber<3?"NEXT COURTYARD  >":"TRY AGAIN",new Vector2(0,-130),new Vector2(600,85),()=>{if(won&&game.CurrentLevel.levelNumber<3)game.StartLevel(game.CurrentLevel.levelNumber);else game.Retry();},true);
+            Button("Primary",content,won&&game.CurrentLevel.levelNumber<game.levels.Length?"NEXT STAGE  >":"TRY AGAIN",new Vector2(0,-130),new Vector2(600,85),()=>{if(won&&game.CurrentLevel.levelNumber<game.levels.Length)game.NextStage();else game.Retry();},true);
             Button("Levels",content,"COURTYARDS",new Vector2(-165,-240),new Vector2(290,70),ShowLevels);
             Button("Home",content,"HOME",new Vector2(165,-240),new Vector2(290,70),game.ShowHome);
             Label("Saved",content,game.Save.Status,new Vector2(0,-330),new Vector2(1000,45),21,null,TextAnchor.MiddleCenter);

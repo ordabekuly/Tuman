@@ -97,6 +97,7 @@ public sealed class EnemyAI : MonoBehaviour
             {
                 windingUp = true;
                 strikeAt = Time.time + windupTime;
+                TumanGame.GameAudio.Instance?.Windup(ranged,transform.position);
                 if (sprite) sprite.color = Color.yellow;
             }
             if (windingUp && Time.time >= strikeAt)
@@ -104,6 +105,7 @@ public sealed class EnemyAI : MonoBehaviour
                 // Recheck sight and range at the hit, so the player can dodge.
                 if (CanSeePlayer() && Vector2.Distance(body.position, player.position) <= attackRange)
                 {
+                    TumanGame.GameAudio.Instance?.Play(TumanGame.SoundEvent.EnemyAttack);
                     if(ranged)TumanGame.EnemyBolt.Create(ownCollider.bounds.center,playerCollider.bounds.center,gameObject,stats);
                     else playerHealth.TakeDamage(damage);
                 }

@@ -27,6 +27,7 @@ public sealed class PlayerHealth : MonoBehaviour
     {
         if (!IsAlive || amount <= 0 || Time.time < invulnerableUntil) return false;
         health = Mathf.Max(0, health - amount);
+        TumanGame.GameAudio.Instance?.Play(IsAlive?TumanGame.SoundEvent.Hit:TumanGame.SoundEvent.Death);
         invulnerableUntil = Time.time + (stats ? stats.invulnerabilityTime : invulnerabilityTime);
         if (!IsAlive)
         {

@@ -15,6 +15,7 @@ public sealed class EnemyHealth : MonoBehaviour
     {
         if (!IsAlive || damage <= 0) return;
         CurrentHealth = Mathf.Max(0, CurrentHealth - damage);
+        TumanGame.GameAudio.Instance?.Play(IsAlive?TumanGame.SoundEvent.Hit:TumanGame.SoundEvent.Death);
         if (IsAlive) return;
         var ai = GetComponent<EnemyAI>();
         if (ai) ai.enabled = false;

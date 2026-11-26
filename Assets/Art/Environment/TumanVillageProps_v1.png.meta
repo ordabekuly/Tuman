@@ -1,0 +1,857 @@
+fileFormatVersion: 2
+guid: 90dbfeb6e33721a41999f58384999dda
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -86101510258194106
+    second: TumanVillageProps_v1_0
+  - first:
+      213: -2656770501636629943
+    second: TumanVillageProps_v1_1
+  - first:
+      213: -6586322464648860658
+    second: TumanVillageProps_v1_2
+  - first:
+      213: 5050314366978350265
+    second: TumanVillageProps_v1_3
+  - first:
+      213: -2038811755032992019
+    second: TumanVillageProps_v1_4
+  - first:
+      213: 4384289428757591639
+    second: TumanVillageProps_v1_5
+  - first:
+      213: 6206844826839699616
+    second: TumanVillageProps_v1_6
+  - first:
+      213: -7829134379012386999
+    second: TumanVillageProps_v1_7
+  - first:
+      213: -6296736852710271547
+    second: TumanVillageProps_v1_8
+  - first:
+      213: -1999651765452451483
+    second: TumanVillageProps_v1_9
+  - first:
+      213: 634866571977610747
+    second: TumanVillageProps_v1_10
+  - first:
+      213: -3914823317453790841
+    second: TumanVillageProps_v1_11
+  - first:
+      213: -8274838857020609496
+    second: TumanVillageProps_v1_12
+  - first:
+      213: -2113125065289193355
+    second: TumanVillageProps_v1_13
+  - first:
+      213: -2034624290825961780
+    second: TumanVillageProps_v1_14
+  - first:
+      213: 3122075742939942082
+    second: TumanVillageProps_v1_15
+  - first:
+      213: -6964572011978119430
+    second: TumanVillageProps_v1_16
+  - first:
+      213: -8189748260749564302
+    second: TumanVillageProps_v1_17
+  - first:
+      213: 9002135303456616872
+    second: TumanVillageProps_v1_18
+  - first:
+      213: 867946663793717943
+    second: TumanVillageProps_v1_19
+  - first:
+      213: 1684043394271625563
+    second: TumanVillageProps_v1_20
+  - first:
+      213: -5909321030364999639
+    second: TumanVillageProps_v1_21
+  - first:
+      213: 8454775234074031835
+    second: TumanVillageProps_v1_22
+  - first:
+      213: 8001369176755128324
+    second: TumanVillageProps_v1_23
+  - first:
+      213: -8565109226515180627
+    second: TumanVillageProps_v1_24
+  - first:
+      213: 925370497592034002
+    second: TumanVillageProps_v1_25
+  - first:
+      213: 9181005785732592863
+    second: TumanVillageProps_v1_26
+  - first:
+      213: 5498355756478777863
+    second: TumanVillageProps_v1_27
+  - first:
+      213: 8102248989366707455
+    second: TumanVillageProps_v1_28
+  - first:
+      213: -4001808719581577048
+    second: TumanVillageProps_v1_29
+  - first:
+      213: -4031245325585470738
+    second: TumanVillageProps_v1_30
+  - first:
+      213: -2574188739845263329
+    second: TumanVillageProps_v1_31
+  - first:
+      213: -1131711983780011731
+    second: TumanVillageProps_v1_32
+  - first:
+      213: 3057438170155605392
+    second: TumanVillageProps_v1_33
+  - first:
+      213: -4985851597769813519
+    second: TumanVillageProps_v1_34
+  - first:
+      213: -448229268808731650
+    second: TumanVillageProps_v1_35
+  - first:
+      213: 907595122654902913
+    second: TumanVillageProps_v1_36
+  - first:
+      213: -9059976876788950556
+    second: TumanVillageProps_v1_37
+  - first:
+      213: 4404686572722479660
+    second: TumanVillageProps_v1_38
+  - first:
+      213: 4589659778902576377
+    second: TumanVillageProps_v1_39
+  - first:
+      213: 8479445016315263453
+    second: TumanVillageProps_v1_40
+  - first:
+      213: -6601673490451996278
+    second: TumanVillageProps_v1_41
+  - first:
+      213: 8760325000943090398
+    second: TumanVillageProps_v1_42
+  - first:
+      213: 6772507936912819809
+    second: TumanVillageProps_v1_43
+  - first:
+      213: -448842760132105264
+    second: TumanVillageProps_v1_44
+  - first:
+      213: 6985472262363133018
+    second: TumanVillageProps_v1_45
+  - first:
+      213: -8056592666517730546
+    second: TumanVillageProps_v1_46
+  - first:
+      213: 6283832106991652019
+    second: TumanVillageProps_v1_47
+  - first:
+      213: -7794387822258516996
+    second: TumanVillageProps_v1_48
+  - first:
+      213: -8586937344062905451
+    second: TumanVillageProps_v1_49
+  - first:
+      213: 223603681477607943
+    second: TumanVillageProps_v1_50
+  - first:
+      213: -1993653965022364792
+    second: TumanVillageProps_v1_51
+  - first:
+      213: 6964613362673695830
+    second: TumanVillageProps_v1_52
+  - first:
+      213: -3595552961786794341
+    second: TumanVillageProps_v1_53
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Home
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 916
+        width: 374
+        height: 314
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbb8389aba68eac45855ff3494c0274d
+      internalID: 1284394654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseA
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 914
+        width: 280
+        height: 270
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a5e5e7f48780f7428fd5381cbfee09a
+      internalID: 290869489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseB
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 914
+        width: 273
+        height: 270
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4742c98ef77158d4692e50b4a4e24bd4
+      internalID: -172590529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseC
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 914
+        width: 286
+        height: 270
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be4b70014c0a0484496a31e8507a055e
+      internalID: -593277972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppleTree
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 624
+        width: 303
+        height: 270
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3d3b5d95e610df42abb62d7353e8e11
+      internalID: 1231346987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PearTree
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 624
+        width: 280
+        height: 270
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0f095e7bc5969d47bd0fd022ecf6b7a
+      internalID: -1867264690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestTree
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 624
+        width: 330
+        height: 275
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38bf1d110edeafd4cb5d32435a5d2d2b
+      internalID: -1809798506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadTree
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 624
+        width: 300
+        height: 275
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 607204db432f9874d9ad2bd3ad520ca1
+      internalID: 414278862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bridge
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 399
+        width: 438
+        height: 212
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3efdfd9ed43fcce4bb37a0e7f5b184ef
+      internalID: -893563024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fence
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 432
+        width: 224
+        height: 124
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dca29193cc673764f8c7993ad55d2af1
+      internalID: 670622327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FenceVertical
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 431
+        width: 115
+        height: 168
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4be02e3484d195e4aba532f3a9b3a2e8
+      internalID: 263706785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FenceCorner
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 430
+        width: 170
+        height: 169
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01355ae1085fec240b799dd87a241073
+      internalID: 1047901974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gate
+      rect:
+        serializedVersion: 2
+        x: 1016
+        y: 425
+        width: 232
+        height: 170
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efe3a077d47d3ad4086aff9016d795d6
+      internalID: -1018333671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveA
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 169
+        width: 122
+        height: 179
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c90d0cc0429a544d9354dbf76bc7379
+      internalID: 92887018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveB
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 169
+        width: 112
+        height: 170
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9295cc1daed0f64c858e634a797d70a
+      internalID: -834984859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveC
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 169
+        width: 109
+        height: 165
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 902b5e21745d39745ab789b337fa1acd
+      internalID: -348207667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RitualStone
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 170
+        width: 136
+        height: 220
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa72ab774ecdb1147b03a67268e69f98
+      internalID: -1943036797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pedestal
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 174
+        width: 191
+        height: 155
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1db1fe87c13a7424382cc27ae8d8c264
+      internalID: 390685890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barrel
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 169
+        width: 130
+        height: 170
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fcf3bbe0a45e7d49b0a19c8f0f69f05
+      internalID: 320422362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Branches
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 177
+        width: 188
+        height: 123
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54226ca60a44a50449a6eaa83ae6601e
+      internalID: -2144654243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 176
+        width: 115
+        height: 163
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08bd6f811cc9c5946932facc4ed464e4
+      internalID: -999832280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Garden
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 5
+        width: 385
+        height: 144
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d10da37e81265a45995982421b40ae5
+      internalID: -484038706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cabbages
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 7
+        width: 357
+        height: 144
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa496a089e755d144a765eb03edc8b5a
+      internalID: 1000498235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrots
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 6
+        width: 310
+        height: 146
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd53254eaf6395a46ab28b8628d80b57
+      internalID: -2093535432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: daa34a0edbb477c4b9c362cb3581622d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AppleTree: 1231346987
+      Barrel: 320422362
+      Branches: -2144654243
+      Bridge: -893563024
+      Cabbages: 1000498235
+      Carrots: -2093535432
+      DeadTree: 414278862
+      Fence: 670622327
+      FenceCorner: 1047901974
+      FenceVertical: 263706785
+      ForestTree: -1809798506
+      Garden: -484038706
+      Gate: -1018333671
+      GraveA: 92887018
+      GraveB: -834984859
+      GraveC: -348207667
+      Home: 1284394654
+      HouseA: 290869489
+      HouseB: -172590529
+      HouseC: -593277972
+      Lantern: -999832280
+      PearTree: -1867264690
+      Pedestal: 390685890
+      RitualStone: -1943036797
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

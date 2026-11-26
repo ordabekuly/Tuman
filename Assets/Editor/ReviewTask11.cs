@@ -24,6 +24,7 @@ public static class ReviewTask11
         if(!File.Exists(Request)||EditorApplication.isCompiling||EditorApplication.isUpdating)return;
         string command;
         try{command=File.ReadAllText(Request).Trim();}catch(IOException){return;}
+        if(command=="saveview") {File.Delete(Request);SaveWindow.ShowSave(File.ReadAllText(GameSession.SavePath));return;}
         if(command=="exit") {
             if(EditorApplication.isPlaying){EditorApplication.isPlaying=false;return;}
             File.Delete(Request);EditorApplication.Exit(0);return;
@@ -98,6 +99,6 @@ public static class ReviewTask11
     {
         static string json;
         public static void ShowSave(string text){json=text;var w=GetWindow<SaveWindow>();w.titleContent=new GUIContent("Tuman save.json");w.minSize=new Vector2(600,500);w.Show();}
-        void OnGUI(){EditorGUILayout.LabelField("save.json — actual Editor persistent save",EditorStyles.boldLabel);EditorGUILayout.TextArea(json??"",GUILayout.ExpandHeight(true));}
+        void OnGUI(){EditorGUILayout.LabelField("save.json — actual Editor persistent save",EditorStyles.boldLabel);var style=new GUIStyle(EditorStyles.textArea){fontSize=22,wordWrap=false};EditorGUILayout.TextArea(json??"",style,GUILayout.ExpandHeight(true));}
     }
 }
